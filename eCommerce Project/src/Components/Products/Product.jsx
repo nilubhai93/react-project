@@ -15,13 +15,16 @@ const Product = () => {
                         <GoHeartFill />
                     </button>
                     <div>
+                        <div className='mt-1 mb-5'>
                         {
-                            (product.onSale) || (product.newArrival)  && (
-                                <span>
-                                    {product.onsale ? "sale" :""}
+                            (product.onSale || product.newArrival) &&
+                            (
+                                <span className={ `px-3 py-1 text-white ${product.onSale ? "bg-red-600" : "bg-green-600"}`}>
+                                    {product.onSale ? "Sale" : "New"}
                                 </span>
                             )
                         }
+                    </div>
                     </div>
                 </div>
 
@@ -36,9 +39,7 @@ const Product = () => {
                 <div className='text-center mt-3'>
                     <h3 className='text-[1.4rem] font-semibold sm:text-sm '>{product.name}</h3>
                     <div className='mt-1 mb-5'>
-                        {
-                            
-                        }
+                       
                         <span className='text-red-600 font-semibold text-lg'>  ₹{product.price.toFixed(2)}</span>
                     </div>
                     <button className='bg-blue-600 text-white text-lg py-1 w-full rounded-lg cursor-pointer active:bg-blue-800' > Add to Cart</button>
