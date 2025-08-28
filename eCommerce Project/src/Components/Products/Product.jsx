@@ -14,7 +14,15 @@ const Product = () => {
                     <button className='text-3xl text-zinc-300'>
                         <GoHeartFill />
                     </button>
-                    <span className='bg-red-600 px-3 py-1 text-white'>Sale</span>
+                    <div>
+                        {
+                            (product.onSale) || (product.newArrival)  && (
+                                <span>
+                                    {product.onsale ? "sale" :""}
+                                </span>
+                            )
+                        }
+                    </div>
                 </div>
 
 
@@ -28,7 +36,10 @@ const Product = () => {
                 <div className='text-center mt-3'>
                     <h3 className='text-[1.4rem] font-semibold sm:text-sm '>{product.name}</h3>
                     <div className='mt-1 mb-5'>
-                        <span className='text-red-600 font-semibold text-lg'>  ₹{product.price}</span>
+                        {
+                            
+                        }
+                        <span className='text-red-600 font-semibold text-lg'>  ₹{product.price.toFixed(2)}</span>
                     </div>
                     <button className='bg-blue-600 text-white text-lg py-1 w-full rounded-lg cursor-pointer active:bg-blue-800' > Add to Cart</button>
                 </div>
@@ -36,6 +47,8 @@ const Product = () => {
             </div>
         )
     })
+    
+    
     return (
         <section className='max-w-[1300px] mx-auto px-12 py-10'>
 
